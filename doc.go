@@ -31,6 +31,10 @@
 //	- Some time ago I wrote a proof of concept library to handle generic slices (https://github.com/fbac/libslice), and the work would be the same
 //	- The general idea would be treating Stacks with the same methods (Pop, Shift, Next, Shuffle, ...) indepently of its type. In the end it's just handling a fancy slice.
 //
+//- About project tree:
+//	- I'm not specifically happy with the proposed tree, because there are pkg which are not supposed to be used externally. And for these pkg, such as grammar or eval, should be under internal/
+//	- cmd, stack, parser can be extended in the future to be used by external programs as packages, so make sense for them to live under pkg/
+//
 //### Other design ideas (from best to worst IMHO)
 //
 //- Using ANTLR (https://www.antlr.org/). Probably the best idea, since it can create a powerful grammar with precedence, lexer and parsers. Also, I've always wanted to have the opportunity to learn more about it. Definitely going to do it asap.
