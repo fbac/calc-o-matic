@@ -26,17 +26,20 @@ func Init() {
 		inputExpr, err := r.ReadString('\n')
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
+			continue
 		}
 
 		inputExpr = strings.TrimSuffix(inputExpr, "\n")
 		tokenStack, err := parser.ParseExpr(inputExpr)
 		if err != nil {
 			log.Printf("error: %v", err)
+			continue
 		}
 
 		ast, err := parser.CreateAST(tokenStack)
 		if err != nil {
 			log.Printf("error: %v", err)
+			continue
 		}
 
 		fmt.Printf("%v\n", eval.Calculate(ast))

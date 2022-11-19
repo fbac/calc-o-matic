@@ -20,10 +20,16 @@
 //	That would get rid of the problems of parsing whitespaces, multidigit numbers, etc
 //
 //- Extending pkg/parser:
+//  - A much better approach would be creating a calculator as a Singleton structure, containing pointers to a lexer, a parser, a logger, etc
 //	- Everything should be matched as a regexp: numbers, operations and invalid chars
 //	- Lexer should be able to update the token initial and final position, to handle the next operator
 //	- Include token associativity, which can be left or right depending on the operator
 //	- Priorities should be addressed in its on file.go
+//
+//- Extending pkg/stack:
+//	- The stack code was basically copy and paste, with minimal differences. This means that is the perfect use case for generics if the project supports Go 1.18+
+//	- Some time ago I wrote a proof of concept library to handle generic slices (https://github.com/fbac/libslice), and the work would be the same
+//	- The general idea would be treating Stacks with the same methods (Pop, Shift, Next, Shuffle, ...) indepently of its type. In the end it's just handling a fancy slice.
 //
 //### Other design ideas (from best to worst IMHO)
 //
