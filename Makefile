@@ -2,7 +2,7 @@ BINARY = calc-o-matic
 BIN_FOLDER = bin
 
 build: clean test
-	@mkdir ${BIN_FOLDER}
+	@mkdir -p ${BIN_FOLDER}
 	@go build -o ${BIN_FOLDER}
 
 clean:

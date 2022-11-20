@@ -52,7 +52,7 @@ func TestDoFunc(t *testing.T) {
 			2,
 		},
 		{
-			"Sum",
+			"Pow",
 			args{
 				op: "^",
 				x:  2,
@@ -202,18 +202,23 @@ func TestPow(t *testing.T) {
 	}{
 		{
 			"Pow - Positive",
-			args{x: 1, y: 0},
+			args{x: 0, y: 1}, // 1^0
 			1,
 		},
 		{
 			"Pow - Negative",
-			args{x: 1, y: 1},
+			args{x: 1, y: 1}, // 1^1
 			1,
 		},
 		{
 			"Pow - Negative",
-			args{x: 1, y: -3},
-			1,
+			args{x: 1, y: -3}, // -3^1
+			-3,
+		},
+		{
+			"Pow - BigNum",
+			args{x: 8, y: 2}, // 2^8
+			256,
 		},
 	}
 	for _, tt := range tests {

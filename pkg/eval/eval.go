@@ -21,7 +21,6 @@ func Calculate(inputStack stack.Stack) int {
 
 		// Switch based on type
 		switch currToken.T {
-
 		case grammar.DIGIT:
 			// If it's a number, convert it to int and add it to the stack
 			newValue, _ := strconv.Atoi(currToken.V)
@@ -36,6 +35,5 @@ func Calculate(inputStack stack.Stack) int {
 		}
 	}
 
-	// 
 	return retStack.UpdateResult()
 }

@@ -12,7 +12,7 @@ func TestCalculate(t *testing.T) {
 	astStack1 := stack.Stack{
 		grammar.Token{T: 1, V: "1"},
 		grammar.Token{T: 1, V: "1"},
-		grammar.Token{T: 0, V: "/"},
+		grammar.Token{T: 0, V: "*"},
 	}
 
 	//[{1 2} {1 2} {0 ^} {1 1} {1 4} {0 *} {0 +} {1 4} {0 -}]

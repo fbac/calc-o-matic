@@ -47,5 +47,5 @@ func Div(x, y int) int {
 }
 
 func Pow(x, y int) int {
-	return int(math.Pow(float64(x), float64(y)))
+	return int(math.Pow(float64(y), float64(x)))
 }
